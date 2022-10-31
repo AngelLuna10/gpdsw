@@ -1,0 +1,37 @@
+// script_version=3.0; everystep_version=0; date=10/16/2022; Chrome=91.0.4472.77
+Tabs.SetSize (1779, 472);
+DMBrowser tab0 = null;
+Step (1, "VideoGames DS02SV-21 - https://videogamesds02.web.app/listar-videojuegos");
+tab0 = Tabs.NewTab ();
+tab0.GoTo ("https://videogamesds02.web.app/");
+tab0.Link ("//A[normalize-space()=\"Video Games\"]", "//A[normalize-space(text())=\"Video Games\"]", "//A[normalize-space()=\"New Video Game\"]/../preceding-sibling::LI[1]//A").Click ();
+ConfirmDialogHandler (ConfirmDialogHandleType.OkButtonClick);
+tab0.Button ("(//BUTTON[normalize-space(text())=\"Eliminar\"])[6]", "(//DIV[normalize-space()=\"2016\"])[last()]/following-sibling::DIV[1]//BUTTON[normalize-space()=\"Eliminar\"]", "(//DIV[normalize-space()=\"2016\"])[last()]/following-sibling::DIV[1]//BUTTON[normalize-space(text())=\"Eliminar\"]").Click ();
+tab0.Link ("//A[normalize-space()=\"New Video Game\"]", "//A[normalize-space(text())=\"New Video Game\"]", "//A[normalize-space()=\"About\"]/../preceding-sibling::LI[1]//A").Click ();
+Step (2, "VideoGames DS02SV-21 - https://videogamesds02.web.app/crear-videojuego");
+tab0.TextField ("(//INPUT[@TYPE=\"text\"])[1]", "//LABEL[normalize-space()=\"Titulo\"]/..//INPUT[@TYPE=\"text\"]", "//LABEL[normalize-space()=\"Titulo\"]/..//INPUT").Click ();
+tab0.TextField ("(//INPUT[@TYPE=\"text\"])[1]", "//LABEL[normalize-space()=\"Titulo\"]/..//INPUT[@TYPE=\"text\"]", "//LABEL[normalize-space()=\"Titulo\"]/..//INPUT").TypeText ("DOM");
+tab0.TextField ("//TEXTAREA").Click ();
+tab0.TextField ("//TEXTAREA").TypeText ("Juego de disparos y exploracion");
+tab0.SelectList ("//OPTION[normalize-space()=\"Selecciona la clasificación.\"]/..", "//SELECT").SelectByText ("Arcade");
+tab0.TextField ("//LABEL[normalize-space()=\"Año:\"]/..//INPUT[@TYPE=\"text\"]", "//LABEL[normalize-space()=\"Año:\"]/..//INPUT", "//LABEL[normalize-space()=\"Imagen\"]/../preceding-sibling::DIV[1]//INPUT[@TYPE=\"text\"]").Click ();
+tab0.TextField ("//LABEL[normalize-space()=\"Año:\"]/..//INPUT[@TYPE=\"text\"]", "//LABEL[normalize-space()=\"Año:\"]/..//INPUT", "//LABEL[normalize-space()=\"Imagen\"]/../preceding-sibling::DIV[1]//INPUT[@TYPE=\"text\"]").TypeText ("2016");
+Tabs.SetSize (924, 471);
+tab0.TextField ("//INPUT[@TYPE=\"url\"]", "//LABEL[normalize-space()=\"Imagen\"]/..//INPUT", "//BUTTON[normalize-space()=\"Agregar\"]/../preceding-sibling::DIV[1]//INPUT").Click ();
+tab0.TextField ("//INPUT[@TYPE=\"url\"]", "//LABEL[normalize-space()=\"Imagen\"]/..//INPUT", "//BUTTON[normalize-space()=\"Agregar\"]/../preceding-sibling::DIV[1]//INPUT").Click ();
+tab0.TextField ("//INPUT[@TYPE=\"url\"]", "//LABEL[normalize-space()=\"Imagen\"]/..//INPUT", "//BUTTON[normalize-space()=\"Agregar\"]/../preceding-sibling::DIV[1]//INPUT").TypeText ("http://acortar.link/xJXHPg");
+Tabs.SetSize (1779, 472);
+tab0.Button ("//BUTTON[normalize-space()=\"Agregar\"]", "//BUTTON[normalize-space(text())=\"Agregar\"]", "//BUTTON[@TYPE=\"submit\"]").Click ();
+Step (3, "VideoGames DS02SV-21 - https://videogamesds02.web.app/listar-videojuegos");
+tab0.Element ("//HTML").Click ();
+tab0.Button ("(//DIV[normalize-space()=\"2016\"])[last()]/following-sibling::DIV[1]//BUTTON[normalize-space()=\"Editar\"]", "(//DIV[normalize-space()=\"2016\"])[last()]/following-sibling::DIV[1]//BUTTON[normalize-space(text())=\"Editar\"]", "//DIV[normalize-space(text())=\"2016\"]/following-sibling::DIV[1]//BUTTON[normalize-space()=\"Editar\"]").Click ();
+Step (4, "VideoGames DS02SV-21 - https://videogamesds02.web.app/editar-videojuego/634c8ea7c9cb20dba815f968");
+tab0.TextField ("(//INPUT[@TYPE=\"text\"])[1]", "//LABEL[normalize-space()=\"Titulo\"]/..//INPUT[@TYPE=\"text\"]", "//LABEL[normalize-space()=\"Titulo\"]/..//INPUT").Click ();
+tab0.TextField ("(//INPUT[@TYPE=\"text\"])[1]", "//LABEL[normalize-space()=\"Titulo\"]/..//INPUT[@TYPE=\"text\"]", "//LABEL[normalize-space()=\"Titulo\"]/..//INPUT").TypeText ("DOOM");
+tab0.TextField ("//TEXTAREA").Click ();
+tab0.TextField ("//TEXTAREA").TypeText ("Juego de disparos con metal de fondo :3");
+tab0.SelectList ("//OPTION[normalize-space()=\"Selecciona una categoria...\"]/..", "//SELECT").SelectByText ("Accion");
+ConfirmDialogHandler (ConfirmDialogHandleType.OkButtonClick);
+tab0.Button ("//BUTTON[normalize-space()=\"Editar\"]", "//BUTTON[normalize-space(text())=\"Editar\"]", "//BUTTON[@TYPE=\"submit\"]").Click ();
+Step (5, "VideoGames DS02SV-21 - https://videogamesds02.web.app/listar-videojuegos");
+
